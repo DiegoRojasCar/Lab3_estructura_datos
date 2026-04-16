@@ -70,3 +70,20 @@ hashmap.c:86:52: error: ‘newBucket’ is a pointer to pointer; did you mean to
       |                                                    ^~
       |                                          (*       )
 4593101
+Thu Apr 16 08:28:26 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:70:5: error: ‘else’ without a previous ‘if’
+   70 |     else{
+      |     ^~~~
+hashmap.c:74:16: error: ‘buckets’ undeclared (first use in this function)
+   74 |             if(buckets[index] == lastMap(map)){
+      |                ^~~~~~~
+hashmap.c:74:16: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:74:34: error: implicit declaration of function ‘lastMap’ [-Wimplicit-function-declaration]
+   74 |             if(buckets[index] == lastMap(map)){
+      |                                  ^~~~~~~
+695a0b2
