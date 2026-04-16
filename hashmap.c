@@ -79,7 +79,7 @@ void insertMap(HashMap * map, char * key, void * value) {
                 control = 0;
             }
             else if (control >= 0){
-                (index + 1) % map -> capacity++;
+                control = (index + 1) % map -> capacity;
             }
             if (control == indexOG){
                 return;

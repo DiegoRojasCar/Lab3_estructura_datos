@@ -247,3 +247,15 @@ hashmap.c:82:29: error: value computed is not used [-Werror=unused-value]
       |                 ~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~
 cc1: all warnings being treated as errors
 1218c87
+Thu Apr 16 08:53:12 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:76:34: error: ‘max’ undeclared (first use in this function); did you mean ‘map’?
+   76 |             index= (index + 1) % max-> capacity;
+      |                                  ^~~
+      |                                  map
+hashmap.c:76:34: note: each undeclared identifier is reported only once for each function it appears in
+afd52e1
