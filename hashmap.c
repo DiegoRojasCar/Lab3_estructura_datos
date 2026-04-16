@@ -85,7 +85,7 @@ void insertMap(HashMap * map, char * key, void * value) {
             }
 
         }
-        printf("%lh", &index);
+        printf("%llu", &index);
         map -> buckets[index] -> key = newBucket -> key;
         map -> buckets[index] -> value = newBucket -> value;
         return;

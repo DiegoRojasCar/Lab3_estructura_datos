@@ -189,3 +189,18 @@ hashmap.c:88:16: error: too many arguments for format [-Werror=format-extra-args
       |                ^~~~~
 cc1: all warnings being treated as errors
 96cbf98
+Thu Apr 16 08:45:50 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:88:20: error: format ‘%llu’ expects argument of type ‘long long unsigned int’, but argument 2 has type ‘long int *’ [-Werror=format=]
+   88 |         printf("%llu", &index);
+      |                 ~~~^   ~~~~~~
+      |                    |   |
+      |                    |   long int *
+      |                    long long unsigned int
+      |                 %ln
+cc1: all warnings being treated as errors
+6f003cb
