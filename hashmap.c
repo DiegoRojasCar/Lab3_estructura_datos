@@ -77,7 +77,7 @@ void insertMap(HashMap * map, char * key, void * value) {
 
         }
         
-        map -> buckets[index] == newBucket;
+        map -> buckets[index] = newBucket;
         return;
         
     }
