@@ -140,3 +140,8 @@ hashmap.c:75:41: error: invalid type argument of unary ‘*’ (have ‘int’)
    75 |             if(map -> buckets[index] == *lastMap(map)){
       |                                         ^~~~~~~~~~~~~
 9f46334
+Thu Apr 16 08:31:53 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+d015fd4

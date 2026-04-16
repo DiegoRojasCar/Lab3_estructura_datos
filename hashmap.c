@@ -72,7 +72,7 @@ void insertMap(HashMap * map, char * key, void * value) {
         int control = -1;
         while(map -> buckets[index] != NULL){
             index++;
-            if(map -> buckets[index] == *lastMap(map)){
+            if(index == map -> capacity - 1){
                 index = 0;
                 control = 0;
             }
