@@ -78,10 +78,8 @@ void insertMap(HashMap * map, char * key, void * value) {
                 map -> buckets[index] -> value = newBucket -> value;
             
 
-        }
+            }
         
-
-        return;
         
     }
 
