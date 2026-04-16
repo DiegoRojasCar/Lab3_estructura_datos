@@ -219,3 +219,15 @@ Thu Apr 16 08:48:02 PM UTC 2026:
  1 file changed, 1 insertion(+), 1 deletion(-)
  tests:  0|0
 75f2554
+Thu Apr 16 08:52:31 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:76:34: error: ‘max’ undeclared (first use in this function); did you mean ‘map’?
+   76 |             index= (index + 1) % max-> capacity;
+      |                                  ^~~
+      |                                  map
+hashmap.c:76:34: note: each undeclared identifier is reported only once for each function it appears in
+8b534b6

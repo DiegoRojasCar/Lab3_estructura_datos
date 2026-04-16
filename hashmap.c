@@ -73,13 +73,13 @@ void insertMap(HashMap * map, char * key, void * value) {
         long control = -1;
         
         while(map -> buckets[index] != NULL){
-            index++;
+            index= (index + 1) % max-> capacity;
             if(index >= ((map -> capacity) - 1)){
                 index = 0;
                 control = 0;
             }
             else if (control >= 0){
-                control++;
+                (index + 1) % max-> capacity++;
             }
             if (control == indexOG){
                 return;
