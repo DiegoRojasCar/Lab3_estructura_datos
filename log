@@ -34,3 +34,39 @@ hashmap.c:86:45: error: ‘newBucket’ is a pointer to pointer; did you mean to
       |                                             ^~
       |                                   (*       )
 b45ce8a
+Thu Apr 16 08:27:50 PM UTC 2026: 
+ hashmap.c | 8 ++++----
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:63:24: error: initialization of ‘Pair **’ from incompatible pointer type ‘Pair *’ [-Wincompatible-pointer-types]
+   63 |     Pair** newBucket = createPair(key, value);
+      |                        ^~~~~~~~~~
+hashmap.c:66:50: error: ‘newBucket’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   66 |         map -> buckets[index] -> key = newBucket -> key;
+      |                                                  ^~
+      |                                        (*       )
+hashmap.c:67:52: error: ‘newBucket’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   67 |         map -> buckets[index] -> value = newBucket -> value;
+      |                                                    ^~
+      |                                          (*       )
+hashmap.c:70:5: error: ‘else’ without a previous ‘if’
+   70 |     else{
+      |     ^~~~
+hashmap.c:74:16: error: ‘buckets’ undeclared (first use in this function)
+   74 |             if(buckets[index] == lastMap(map)){
+      |                ^~~~~~~
+hashmap.c:74:16: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:74:34: error: implicit declaration of function ‘lastMap’ [-Wimplicit-function-declaration]
+   74 |             if(buckets[index] == lastMap(map)){
+      |                                  ^~~~~~~
+hashmap.c:85:50: error: ‘newBucket’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   85 |         map -> buckets[index] -> key = newBucket -> key;
+      |                                                  ^~
+      |                                        (*       )
+hashmap.c:86:52: error: ‘newBucket’ is a pointer to pointer; did you mean to dereference it before applying ‘->’ to it?
+   86 |         map -> buckets[index] -> value = newBucket -> value;
+      |                                                    ^~
+      |                                          (*       )
+4593101
