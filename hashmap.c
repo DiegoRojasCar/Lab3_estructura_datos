@@ -83,13 +83,12 @@ void insertMap(HashMap * map, char * key, void * value) {
             if (control == indexOG){
                 return;
             }
-            if(map -> buckets[index] == NULL){
-                map -> buckets[index] -> key = newBucket -> key;
-                map -> buckets[index] -> value = newBucket -> value;
-                return;
-            }
-        }
 
+        }
+        printf("%lh", &index);
+        map -> buckets[index] -> key = newBucket -> key;
+        map -> buckets[index] -> value = newBucket -> value;
+        return;
         
     }
 

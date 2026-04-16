@@ -175,3 +175,17 @@ Thu Apr 16 08:44:37 PM UTC 2026:
  1 file changed, 6 insertions(+), 1 deletion(-)
  tests:  0|0
 6171e7b
+Thu Apr 16 08:45:34 PM UTC 2026: 
+ hashmap.c | 7 +++----
+ 1 file changed, 3 insertions(+), 4 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:88:19: error: unknown conversion type character ‘h’ in format [-Werror=format=]
+   88 |         printf("%lh", &index);
+      |                   ^
+hashmap.c:88:16: error: too many arguments for format [-Werror=format-extra-args]
+   88 |         printf("%lh", &index);
+      |                ^~~~~
+cc1: all warnings being treated as errors
+96cbf98
