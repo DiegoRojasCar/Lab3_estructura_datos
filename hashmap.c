@@ -61,13 +61,14 @@ HashMap * createMap(long capacity) {
 void insertMap(HashMap * map, char * key, void * value) {
     int index = hash(key, map -> capacity);
     Pair* newBucket = createPair(key, value); 
-
+    
     if(map -> buckets[index] == NULL){
         map -> buckets[index] -> key = newBucket -> key;
         map -> buckets[index] -> value = newBucket -> value;
     }
-    int indexOG = index;
+
     else{
+        int indexOG = index;
         int control = -1;
         while(map -> buckets[index] != NULL){
             index++;
