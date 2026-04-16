@@ -127,3 +127,16 @@ hashmap.c:75:38: error: comparison between pointer and integer [-Werror]
       |                                      ^~
 cc1: all warnings being treated as errors
 08c8431
+Thu Apr 16 08:31:08 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:75:42: error: implicit declaration of function ‘lastMap’ [-Wimplicit-function-declaration]
+   75 |             if(map -> buckets[index] == *lastMap(map)){
+      |                                          ^~~~~~~
+hashmap.c:75:41: error: invalid type argument of unary ‘*’ (have ‘int’)
+   75 |             if(map -> buckets[index] == *lastMap(map)){
+      |                                         ^~~~~~~~~~~~~
+9f46334
