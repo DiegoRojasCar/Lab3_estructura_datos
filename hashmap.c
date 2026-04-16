@@ -69,21 +69,11 @@ void insertMap(HashMap * map, char * key, void * value) {
     }
 
     else{
-        long indexOG = index;
-        long control = -1;
         
         while(map -> buckets[index] != NULL){
             index= (index + 1) % map-> capacity;
-            if(index >= ((map -> capacity) - 1)){
-                index = 0;
-                control = 0;
-            }
-            else if (control >= 0){
-                control = (index + 1) % map -> capacity;
-            }
-            if (control == indexOG){
-                return;
-            }
+        
+            
 
         }
         map -> buckets[index] -> key = newBucket -> key;
