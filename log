@@ -269,3 +269,14 @@ Thu Apr 16 08:55:53 PM UTC 2026:
  1 file changed, 2 insertions(+), 12 deletions(-)
  tests:  0|0
 49c658a
+Thu Apr 16 09:00:02 PM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:80:31: error: statement with no effect [-Werror=unused-value]
+   80 |         map -> buckets[index] == newBucket;
+      |         ~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~
+cc1: all warnings being treated as errors
+abadcad
