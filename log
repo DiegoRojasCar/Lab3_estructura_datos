@@ -113,3 +113,17 @@ hashmap.c:75:34: error: implicit declaration of function ‘lastMap’ [-Wimplic
    75 |             if(buckets[index] == lastMap(map)){
       |                                  ^~~~~~~
 2bdbcc9
+Thu Apr 16 08:29:58 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:75:41: error: implicit declaration of function ‘lastMap’ [-Wimplicit-function-declaration]
+   75 |             if(map -> buckets[index] == lastMap(map)){
+      |                                         ^~~~~~~
+hashmap.c:75:38: error: comparison between pointer and integer [-Werror]
+   75 |             if(map -> buckets[index] == lastMap(map)){
+      |                                      ^~
+cc1: all warnings being treated as errors
+08c8431
