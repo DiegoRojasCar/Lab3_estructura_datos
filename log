@@ -101,3 +101,15 @@ hashmap.c:75:34: error: implicit declaration of function ‘lastMap’ [-Wimplic
    75 |             if(buckets[index] == lastMap(map)){
       |                                  ^~~~~~~
 8fb8010
+Thu Apr 16 08:29:28 PM UTC 2026: 
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘insertMap’:
+hashmap.c:75:16: error: ‘buckets’ undeclared (first use in this function)
+   75 |             if(buckets[index] == lastMap(map)){
+      |                ^~~~~~~
+hashmap.c:75:16: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:75:34: error: implicit declaration of function ‘lastMap’ [-Wimplicit-function-declaration]
+   75 |             if(buckets[index] == lastMap(map)){
+      |                                  ^~~~~~~
+2bdbcc9
