@@ -112,7 +112,7 @@ Pair * searchMap(HashMap * map,  char * key) {
     }
     while ((map -> buckets[index] != NULL) && strcmp(map -> buckets[index] -> key, key) != 0){
         index = (index + 1) % map -> capacity;
-        if (map -> buckets[index] -> key ==  key){
+        if (strcmp(map -> buckets[index] -> key, key) == 0){
             map -> current = index;
             return (map -> buckets[index]);
         }
