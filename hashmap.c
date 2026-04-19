@@ -161,7 +161,7 @@ Pair * firstMap(HashMap * map) {
     }
 
     if(map -> buckets[index] != NULL){
-        map -> current = 0;
+        map -> current = index;
         return map -> buckets[index];
     }
 
@@ -170,7 +170,7 @@ Pair * firstMap(HashMap * map) {
         index = (index + 1) % map -> capacity;
         
         if(map -> buckets[index] != NULL){
-            map -> current = 0;
+            map -> current = index;
             return map -> buckets[index];
         }
     }
