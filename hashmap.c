@@ -68,18 +68,27 @@ void insertMap(HashMap * map, char * key, void * value) {
     long index = hash(key, map -> capacity);
     Pair* newBucket = createPair(key, value); 
     
-
-    while(map -> buckets[index] != NULL){
-
-        if(map -> buckets[index] == NULL){
-            map -> buckets[index] = newBucket;
-            map -> current = index;
-            map -> size = map ->size + 1;
-            return;
-        } 
-        index = (index + 1) % map -> capacity;
+    if(map -> buckets[index] == NULL){
+        map -> buckets[index] = newBucket;
+        map -> current = index;
+        map -> size = map -> size + 1;
+        return;
     }
-    
+
+    else{
+        
+        while(map -> buckets[index] != NULL){
+            index = (index + 1) % map -> capacity;
+
+            if(map -> buckets[index] == NULL){
+                map -> buckets[index] = newBucket;
+                map -> current = index;
+                map -> size = map ->size + 1;
+                return;
+
+            } 
+        }
+    }
 }
 
 // 3. Implemente la función Pair * searchMap(HashMap * map, char * key), la cual retorna el Pair asociado a la clave ingresada. 
