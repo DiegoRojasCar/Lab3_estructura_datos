@@ -107,7 +107,7 @@ Pair * searchMap(HashMap * map,  char * key) {
         map -> current = index;
         return (map -> buckets[index]);
     }
-    while ((map -> buckets[index] -> key != key) &&| (map -> buckets[index] != NULL)){
+    while ((map -> buckets[index] -> key != key) && (map -> buckets[index] != NULL)){
         index = (index + 1) % map -> capacity;
         if (map -> buckets[index] -> key ==  key){
             map -> current = index;

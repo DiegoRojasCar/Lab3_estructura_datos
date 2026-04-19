@@ -547,3 +547,8 @@ hashmap.c:110:52: error: expected expression before ‘|’ token
   110 |     while ((map -> buckets[index] -> key != key) &&| (map -> buckets[index] != NULL)){
       |                                                    ^
 795a774
+Sun Apr 19 04:33:31 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  0|0
+1a23bfb
