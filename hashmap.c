@@ -173,7 +173,7 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
 
-    if (map -> size == 0 || map -> current == -1 || map -> capacity == 1){
+    if (map -> size == 0 || map -> current == -1 ){
         return NULL;
     }
 
@@ -190,6 +190,9 @@ Pair * nextMap(HashMap * map) {
         }
         
         index = (index + 1) % map -> capacity;
+        if (index == 0){
+            return NULL;
+        }
     }
 
     return NULL;
