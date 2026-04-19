@@ -74,8 +74,7 @@ void insertMap(HashMap * map, char * key, void * value) {
             index = (index + 1) % map -> capacity;
 
             if(map -> buckets[index] == NULL){
-                map -> buckets[index] -> key = newBucket -> key;
-                map -> buckets[index] -> value = newBucket -> value;
+                map -> buckets[index] = newBucket;
                 map -> current = index;
                 map -> capacity = map ->capacity + 1;
                 return;
