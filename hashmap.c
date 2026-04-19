@@ -154,13 +154,12 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
 
-    long index = 0;
 
     if (map -> size == 0){
         return NULL;
     }
 
-    for (index; index < map -> capacity; index++){
+    for (int index = 0; index < map -> capacity; index++){
         
         if(map -> buckets[index] != NULL){
             map -> current = index;
