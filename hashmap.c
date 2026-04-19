@@ -190,10 +190,6 @@ Pair * nextMap(HashMap * map) {
         }
         
         index = (index + 1) % map -> capacity;
-        
-        if (index == guardado ){
-            return NULL;
-        }
     }
 
     return NULL;
