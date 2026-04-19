@@ -154,10 +154,57 @@ void eraseMap(HashMap * map,  char * key) {
 
 Pair * firstMap(HashMap * map) {
 
+    long index = 0;
+
+    if (map -> size == 0){
+        return NULL;
+    }
+
+    if(map -> buckets[index] != NULL){
+        map -> current = 0;
+        return map -> buckets[index];
+    }
+
+    while(map -> buckets[index] == NULL){
+
+        index = (index + 1) % map -> capacity;
+        
+        if(map -> buckets[index] != NULL){
+            map -> current = 0;
+            return map -> buckets[index];
+        }
+    }
+
     return NULL;
 }
 
 Pair * nextMap(HashMap * map) {
+
+    long guardado = map -> current;
+    long index = (map -> current + 1) % map -> capacity;
+
+    if (map -> size == 0){
+        return NULL;
+    }
+
+    if(map -> buckets[index] != NULL){
+        map -> current = 0;
+        return map -> buckets[index];
+    }
+
+    while(map -> buckets[index] == NULL){
+
+        index = (index + 1) % map -> capacity;
+        
+        if (index == guardado){
+            return NULL;
+        }
+
+        if(map -> buckets[index] != NULL){
+            map -> current = 0;
+            return map -> buckets[index];
+        }
+    }
 
     return NULL;
 }
