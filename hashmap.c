@@ -160,19 +160,14 @@ Pair * firstMap(HashMap * map) {
         return NULL;
     }
 
-    if(map -> buckets[index] != NULL){
-        map -> current = index;
-        return map -> buckets[index];
-    }
 
     while(map -> buckets[index] == NULL){
-
-        index = (index + 1) % map -> capacity;
         
         if(map -> buckets[index] != NULL){
             map -> current = index;
             return map -> buckets[index];
         }
+        index = (index + 1) % map -> capacity;
     }
 
     return NULL;
@@ -187,23 +182,19 @@ Pair * nextMap(HashMap * map) {
         return NULL;
     }
 
-    if(map -> buckets[index] != NULL){
-        map -> current = 0;
-        return map -> buckets[index];
-    }
+    while(map -> buckets[index] -> key == NULL){
 
-    while(map -> buckets[index] == NULL){
-
-        index = (index + 1) % map -> capacity;
         
         if (index == guardado){
             return NULL;
         }
 
-        if(map -> buckets[index] != NULL){
-            map -> current = 0;
+        if(map -> buckets[index] -> key != NULL){
+            map -> current = index;
             return map -> buckets[index];
         }
+
+        index = (index + 1) % map -> capacity;
     }
 
     return NULL;
