@@ -176,7 +176,7 @@ Pair * nextMap(HashMap * map) {
     long guardado = map -> current;
     long index = (guardado + 1) % map -> capacity;
 
-    if (map -> size == 0){
+    if (map -> size == 0 || map -> current == -1){
         return NULL;
     }
 
@@ -190,6 +190,7 @@ Pair * nextMap(HashMap * map) {
         }
         
         index = (index + 1) % map -> capacity;
+        
         if (index == guardado ){
             return NULL;
         }
