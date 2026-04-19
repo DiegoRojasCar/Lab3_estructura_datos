@@ -174,33 +174,21 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
 
     long guardado = map -> current;
-    long index = (map -> current + 1) % map -> capacity;
 
     if (map -> size == 0){
         return NULL;
     }
 
-    if(map -> buckets[index] != NULL && map -> buckets[index] -> key != NULL){
-        map -> current = index;
-        return map -> buckets[index];
-    }
 
-    while(map -> buckets[index] == NULL){
+    while(index != guardado){
 
-        
-        if (index == guardado){
-            return NULL;
-        }
+        long index = (index + 1) % map -> capacity;
 
         if(map -> buckets[index] != NULL && map -> buckets[index] -> key != NULL){
             map -> current = index;
             return map -> buckets[index];
         }
-
-        index = (index + 1) % map -> capacity;
     }
-
-    return NULL;
 }
 
 
