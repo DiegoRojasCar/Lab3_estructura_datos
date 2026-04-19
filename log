@@ -557,3 +557,20 @@ Sun Apr 19 04:37:36 AM UTC 2026:
  1 file changed, 4 insertions(+), 1 deletion(-)
  tests:  0|0
 3b6466b
+Sun Apr 19 04:39:10 AM UTC 2026: 
+ hashmap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:113:94: error: expected statement before ‘)’ token
+  113 |     while ((map -> buckets[index] != NULL) && strcmp(map -> buckets[index] -> key, key) != 0)){
+      |                                                                                              ^
+hashmap.c:113:5: error: this ‘while’ clause does not guard... [-Werror=misleading-indentation]
+  113 |     while ((map -> buckets[index] != NULL) && strcmp(map -> buckets[index] -> key, key) != 0)){
+      |     ^~~~~
+hashmap.c:113:95: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the ‘while’
+  113 |     while ((map -> buckets[index] != NULL) && strcmp(map -> buckets[index] -> key, key) != 0)){
+      |                                                                                               ^
+cc1: all warnings being treated as errors
+4dfe205
