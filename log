@@ -425,3 +425,17 @@ Sun Apr 19 02:52:00 AM UTC 2026:
  tests:  4|5
 total_score: 15/60
 17e226c
+Sun Apr 19 02:53:45 AM UTC 2026: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:49:11: error: expected expression before ‘int’
+   49 |     while(int i = 0; i < capacity; i++){
+      |           ^~~
+hashmap.c:50:25: error: ‘i’ undeclared (first use in this function)
+   50 |         mapa -> buckets[i] = (Pair *) malloc(sizeof(Pair));
+      |                         ^
+hashmap.c:50:25: note: each undeclared identifier is reported only once for each function it appears in
+1d2f446
