@@ -138,9 +138,9 @@ void eraseMap(HashMap * map,  char * key) {
         }
         
         if (strcmp(map -> buckets[index] -> key, key) == 0){
-            map -> buckets[index] -> key == NULL;
-            map -> buckets[index] -> value == NULL;
-            map -> buckets[index] == NULL;
+            map -> buckets[index] -> key = NULL;
+            map -> buckets[index] -> value = NULL;
+            map -> buckets[index] = NULL;
             map -> size--;
             return;
         }
