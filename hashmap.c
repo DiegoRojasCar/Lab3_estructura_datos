@@ -63,8 +63,9 @@ void insertMap(HashMap * map, char * key, void * value) {
     Pair* newBucket = createPair(key, value); 
     
     if(map -> buckets[index] == NULL){
-        map -> buckets[index] -> key = newBucket -> key;
-        map -> buckets[index] -> value = newBucket -> value;
+        map -> buckets[index] = newBucket;
+        map -> current = index;
+        map -> capacity = map -> size + 1;
         return;
     }
 
@@ -76,7 +77,7 @@ void insertMap(HashMap * map, char * key, void * value) {
             if(map -> buckets[index] == NULL){
                 map -> buckets[index] = newBucket;
                 map -> current = index;
-                map -> capacity = map ->capacity + 1;
+                map -> capacity = map ->size + 1;
                 return;
 
             } 
