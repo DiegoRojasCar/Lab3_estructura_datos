@@ -801,3 +801,24 @@ hashmap.c:216:11: error: variable ‘old_buckets’ set but not used [-Werror=un
       |           ^~~~~~~~~~~
 cc1: all warnings being treated as errors
 717ce82
+Sun Apr 19 06:19:31 PM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘enlarge’:
+hashmap.c:217:5: error: ‘old_capacity’ undeclared (first use in this function)
+  217 |     old_capacity = map -> capacity;
+      |     ^~~~~~~~~~~~
+hashmap.c:217:5: note: each undeclared identifier is reported only once for each function it appears in
+hashmap.c:222:14: error: expected identifier or ‘(’ before ‘=’ token
+  222 |     for (int = 0; i < old_capacity; i++){
+      |              ^
+hashmap.c:222:19: error: ‘i’ undeclared (first use in this function)
+  222 |     for (int = 0; i < old_capacity; i++){
+      |                   ^
+hashmap.c:216:12: error: variable ‘old_buckets’ set but not used [-Werror=unused-but-set-variable]
+  216 |     Pair **old_buckets = map -> buckets;
+      |            ^~~~~~~~~~~
+cc1: all warnings being treated as errors
+8209874
