@@ -174,6 +174,7 @@ Pair * firstMap(HashMap * map) {
 Pair * nextMap(HashMap * map) {
 
     long guardado = map -> current;
+    long index = (guardado + 1) % map -> capacity;
 
     if (map -> size == 0){
         return NULL;
@@ -182,12 +183,13 @@ Pair * nextMap(HashMap * map) {
 
     while(index != guardado){
 
-        long index = (index + 1) % map -> capacity;
 
         if(map -> buckets[index] != NULL && map -> buckets[index] -> key != NULL){
             map -> current = index;
             return map -> buckets[index];
         }
+        
+        index = (index + 1) % map -> capacity;
     }
 }
 
