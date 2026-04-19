@@ -161,7 +161,7 @@ Pair * firstMap(HashMap * map) {
 
     for (int index = 0; index < map -> capacity; index++){
         
-        if(map -> buckets[index] != NULL){
+        if(map -> buckets[index] -> key != NULL){
             map -> current = index;
             return map -> buckets[index];
         }
