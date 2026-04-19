@@ -101,21 +101,19 @@ void insertMap(HashMap * map, char * key, void * value) {
 Pair * searchMap(HashMap * map,  char * key) {   
     long index = hash(key, map -> capacity);
 
-    if (map -> buckets[index] == NULL){
-        map -> current = index;
-        return NULL;
-    }
-    
-    if (strcmp(map -> buckets[index] -> key, key) == 0){
-        map -> current = index;
-        return (map -> buckets[index]);
-    }
-    while ((map -> buckets[index] != NULL) && strcmp(map -> buckets[index] -> key, key) != 0){
-        index = (index + 1) % map -> capacity;
+    while (map -> buckets[index] != NULL){
+
+        if (map -> buckets[index] == NULL){
+            map -> current = index;
+            return NULL;
+        }
+        
         if (strcmp(map -> buckets[index] -> key, key) == 0){
             map -> current = index;
             return (map -> buckets[index]);
         }
+        
+        index = (index + 1) % map -> capacity;
     }
     
 
