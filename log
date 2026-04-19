@@ -537,3 +537,13 @@ Sun Apr 19 04:32:11 AM UTC 2026:
  1 file changed, 5 insertions(+), 3 deletions(-)
  tests:  0|0
 1ee18ba
+Sun Apr 19 04:33:22 AM UTC 2026: 
+ hashmap.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘searchMap’:
+hashmap.c:110:52: error: expected expression before ‘|’ token
+  110 |     while ((map -> buckets[index] -> key != key) &&| (map -> buckets[index] != NULL)){
+      |                                                    ^
+795a774
