@@ -99,6 +99,21 @@ void insertMap(HashMap * map, char * key, void * value) {
 // Recuerde actualizar el índice current a la posición encontrada. Recuerde que el arreglo es circular.
 
 Pair * searchMap(HashMap * map,  char * key) {   
+    long index = hash(key, map);
+
+    if (map -> buckets[index] -> key ==  key){
+        return (map -> buckets[index]);
+        map -> current = index;
+    }
+    while (map -> buckets[index] -> key != key){
+        index = (index + 1) % map -> capacity;
+        if (map -> buckets[index] -> key ==  key){
+            return (map -> buckets[index]);
+            map -> current = index;
+        }
+    }
+    
+    
 
 
     return NULL;
