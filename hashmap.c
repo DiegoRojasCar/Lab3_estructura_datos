@@ -160,6 +160,10 @@ Pair * firstMap(HashMap * map) {
         return NULL;
     }
 
+    if(map -> buckets[index] != NULL){
+        map -> current = index;
+        return map -> buckets[index];
+    }
 
     while(map -> buckets[index] == NULL){
         
