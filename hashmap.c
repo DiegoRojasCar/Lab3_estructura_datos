@@ -160,18 +160,13 @@ Pair * firstMap(HashMap * map) {
         return NULL;
     }
 
-    if(map -> buckets[index] != NULL){
-        map -> current = index;
-        return map -> buckets[index];
-    }
-
-    while(map -> buckets[index] == NULL){
+    for (index; index < map -> capacity; index++){
         
         if(map -> buckets[index] != NULL){
             map -> current = index;
             return map -> buckets[index];
         }
-        index = (index + 1) % map -> capacity;
+
     }
 
     return NULL;
