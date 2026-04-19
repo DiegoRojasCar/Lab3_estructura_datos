@@ -130,10 +130,10 @@ void eraseMap(HashMap * map,  char * key) {
 
     long index = hash(key, map -> capacity);
 
-    while (map -> buckets[index] != NULL){
-        index = (index + 1) % map -> capacity;
 
-        if(map -> buckets == NULL){
+    while (map -> buckets[index] != NULL){
+
+        if(map -> buckets[index] == NULL){
             return;
         }
         
@@ -144,6 +144,7 @@ void eraseMap(HashMap * map,  char * key) {
             map -> size--;
             return;
         }
+        index = (index + 1) % map -> capacity;
     }
 
 }
