@@ -180,14 +180,19 @@ Pair * nextMap(HashMap * map) {
         return NULL;
     }
 
-    while(map -> buckets[index] -> key == NULL){
+    if(map -> buckets[index] != NULL && map -> buckets[index] -> key != NULL){
+        map -> current = index;
+        return map -> buckets[index];
+    }
+
+    while(map -> buckets[index] == NULL){
 
         
         if (index == guardado){
             return NULL;
         }
 
-        if(map -> buckets[index] -> key != NULL){
+        if(map -> buckets[index] != NULL && map -> buckets[index] -> key != NULL){
             map -> current = index;
             return map -> buckets[index];
         }
