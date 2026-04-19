@@ -475,3 +475,14 @@ hashmap.c:50:14: error: ‘*mapa.buckets’ may be used uninitialized [-Werror=m
       |         ~~~~~^~~~~~~~~~
 cc1: all warnings being treated as errors
 0785cdf
+Sun Apr 19 02:55:51 AM UTC 2026: 
+ hashmap.c | 5 ++---
+ 1 file changed, 2 insertions(+), 3 deletions(-)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘createMap’:
+hashmap.c:50:21: error: ‘i’ undeclared (first use in this function)
+   50 |     mapa -> buckets[i] = (Pair **)malloc(sizeof(Pair*));
+      |                     ^
+hashmap.c:50:21: note: each undeclared identifier is reported only once for each function it appears in
+dc1e6a0
