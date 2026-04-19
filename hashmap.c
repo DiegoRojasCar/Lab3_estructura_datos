@@ -173,12 +173,12 @@ Pair * firstMap(HashMap * map) {
 
 Pair * nextMap(HashMap * map) {
 
-    long guardado = map -> current;
-    long index = (guardado + 1) % map -> capacity;
-
     if (map -> size == 0 || map -> current == -1){
         return NULL;
     }
+
+    long guardado = map -> current;
+    long index = (guardado + 1) % map -> capacity;
 
 
     while(index != guardado){
