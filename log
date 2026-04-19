@@ -609,3 +609,20 @@ Sun Apr 19 04:46:40 AM UTC 2026:
  tests:  8|3
 total_score: 30/60
 3862dbd
+Sun Apr 19 04:53:21 AM UTC 2026: 
+ hashmap.c | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+Compilation failed
+In file included from test.c:5:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:141:42: error: statement with no effect [-Werror=unused-value]
+  141 |             map -> buckets[index] -> key == NULL;
+      |                                          ^
+hashmap.c:142:44: error: statement with no effect [-Werror=unused-value]
+  142 |             map -> buckets[index] -> value == NULL;
+      |                                            ^
+hashmap.c:143:35: error: statement with no effect [-Werror=unused-value]
+  143 |             map -> buckets[index] == NULL;
+      |                                   ^
+cc1: all warnings being treated as errors
+f0c5947

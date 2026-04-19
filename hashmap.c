@@ -83,7 +83,7 @@ void insertMap(HashMap * map, char * key, void * value) {
             if(map -> buckets[index] == NULL){
                 map -> buckets[index] = newBucket;
                 map -> current = index;
-                map -> size = map ->size + 1;
+                map -> size = map -> size + 1;
                 return;
 
             } 
@@ -128,6 +128,23 @@ Pair * searchMap(HashMap * map,  char * key) {
 
 void eraseMap(HashMap * map,  char * key) {    
 
+    long index = hash(key, map -> capacity);
+
+    while (map -> buckets[index] != NULL){
+        index = (index + 1) % map -> capacity;
+
+        if(map -> buckets == NULL){
+            return;
+        }
+        
+        if (strcmp(map -> buckets[index] -> key, key) == 0){
+            map -> buckets[index] -> key == NULL;
+            map -> buckets[index] -> value == NULL;
+            map -> buckets[index] == NULL;
+            map -> size--;
+            return;
+        }
+    }
 
 }
 
